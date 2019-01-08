@@ -24,9 +24,13 @@ def main():
     # Call the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     print('Getting the upcoming 10 events')
-    events_result = service.events().list(calendarId='primary', timeMin=now,
+    #events_result = service.events().list(calendarId='primary', timeMin=now,
+    #                                    maxResults=10, singleEvents=True,
+    #                                    orderBy='startTime').execute()
+    events_result = service.events().list(calendarId='primary', timeMin='2019-01-05T00:00:00+09:00',timeMax='2019-01-05T23:59:59+09:00',
                                         maxResults=10, singleEvents=True,
                                         orderBy='startTime').execute()
+    
     events = events_result.get('items', [])
 
     if not events:
