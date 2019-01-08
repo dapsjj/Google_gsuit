@@ -93,7 +93,7 @@ for mssg in mssg_list:
     final_list.append(temp_dict)  # This will create a dictonary item in the final list
 
     # This will mark the messagea as read
-    GMAIL.users().messages().modify(userId=user_id, id=m_id, body={'removeLabelIds': ['UNREAD']}).execute()
+    #GMAIL.users().messages().modify(userId=user_id, id=m_id, body={'removeLabelIds': ['UNREAD']}).execute()
 
 print("Total messaged retrived: ", str(len(final_list)))
 
